@@ -1,29 +1,36 @@
-\newpage
 \section{Netzwerkanalyse}
 
 \begin{multicols}{2}
-\subsection{Serieschaltung von Widerständen}
+\subsection{Serieschaltung von WiderstÃ¤nden}
 $ R_{ges} = \sum\limits_{k=1}^{n}{R_k} $ \\
 
-\subsection{Parallelschaltung von Widerständen}
-$ \frac{1}{R_{ges}} = \sum\limits_{k=1}^{n}\frac{1}{R_k}\ \ \ R_{ges2} = \frac{R_1 \cdot R_2}{R_1 + R_2} $ \\
-
+\subsection{Parallelschaltung von WiderstÃ¤nden}
+$ \frac{1}{R_{ges}} = \sum\limits_{k=1}^{n}\frac{1}{R_k}\ \ \ \rightarrow R_{ges_2} = \frac{R_1 \cdot R_2}{R_1 + R_2} $ \\
+\begin{multicols}{2}
 \subsection{Spannungsteiler}
-\includegraphics[width=0.15\textwidth]{pics/spannungsteiler}\\
+\includegraphics[width=0.20\textwidth]{pics/spannungsteiler}\\
 $ U_1 = U \cdot \frac{R_1}{R_1 + R_2}$ \\
 $ U_2 = U \cdot \frac{R_2}{R_1 + R_2}$ \\
 
+\subsection{Stromteiler}
+\includegraphics[width=0.15\textwidth]{pics/stromteiler}\\
+$ I_1 = I \cdot \frac{R_2}{R_1 + R_2}$ \\
+$ I_2 = I \cdot \frac{R_1}{R_1 + R_2}$ \\
+\end{multicols}
 \end{multicols}
 
 \subsection{Kirchhof}
 \begin{multicols}{4}
-\includegraphics[width=0.15 \textwidth]{pics/kirchhof/masche}\\
+{\centering
+\includegraphics[width=0.12 \textwidth]{pics/kirchhof/masche}\\}
+\textbf{2. Kirchhofschesgesetz}\\
 Maschensatz: Summe aller Spannungen =0.\\
 	$U_1+U_2+U_3-10V=0$
 	$10V-U_4+U_q-U_5=0$
 	$U_1+U_2+U_3-U_4+U_q-U_5=0$\\
-\includegraphics[width=0.25\textwidth]{pics/kirchhof/knoten}\\
-Konotensatz: Summer aller Str"ome = 0, zufliessende Ströme positiv abfliessende Ströme negativ.\\
+\includegraphics[width=0.24\textwidth]{pics/kirchhof/knoten}\\
+\textbf{1. Kirchhofschesgesetz}\\
+Konotensatz: Summer aller Str"ome = 0, zufliessende StrÃ¶me positiv abfliessende StrÃ¶me negativ.\\
 $4A-8A+5A-2A+I=0A$\\
 \end{multicols}
 
@@ -32,8 +39,8 @@ $4A-8A+5A-2A+I=0A$\\
 \includegraphics[width=0.3\textwidth]{pics/stern-dreieck}
 \subsubsection{$ \triangle \rightarrow $ Y}
 $ R_0 = R_1 + R_2 + R_3 $ \\
-$ R_a = \frac{R_1R_2}{R_0} = \frac{R_1R_2}{R_1 + R_2 + R_3} $ \\
-$ R_b = \frac{R_2R_3}{R_0} = \frac{R_2R_3}{R_1 + R_2 + R_3} $ \\
+$ R_a = \frac{R_1R_2}{R_0} = \frac{R_1R_2}{R_1 + R_2 + R_3} $ \\[1pt]
+$ R_b = \frac{R_2R_3}{R_0} = \frac{R_2R_3}{R_1 + R_2 + R_3} $ \\[1pt]
 $ R_c = \frac{R_1R_3}{R_0} = \frac{R_1R_3}{R_1 + R_2 + R_3} $ \\
 \subsubsection{Y $ \rightarrow \triangle $}
 $ G_0 = G_a + G_b + G_c = \frac{1}{R_a} + \frac{1}{R_b} + \frac{1}{R_c} $ \\
@@ -46,35 +53,54 @@ $ R_3 = R_bR_cG_0 = R_bR_c(\frac{1}{R_a} + \frac{1}{R_b} + \frac{1}{R_c}) $ \\
 \begin{tabular}{lll}
 Knoten & (Verbindungspunkte) & Anzahl: k \\
 Zweige & (Verbindungen zwischen Knoten) & Anzahl: z \\
-Vollständiger Baum & Nicht geschlossener Linienzug, verbindet sämtliche Knoten& \\
+VollstÃ¤ndiger Baum & Nicht geschlossener Linienzug, verbindet sÃ¤mtliche Knoten& \\
 Baumzweige ("Aste) & &  Anzahl: k-1\\
-Verbindungszweige (Sehnen) & Alle Zweige, die nicht zum Baum gehören & Anzahl: z-(k-1)=z-k+1\\
-Kreis & Geschlossene Folge von Zweigen, enthält keinen Knoten zweimal & \\
-Masche & Kreis, der entweder innerhalb oder ausserhalb keine Zweige enthält & \\
+Verbindungszweige (Sehnen) & Alle Zweige, die nicht zum Baum gehÃ¶ren & Anzahl: z-(k-1)=z-k+1\\
+Kreis & Geschlossene Folge von Zweigen, enthÃ¤lt keinen Knoten zweimal & \\
+Masche & Kreis, der entweder innerhalb oder ausserhalb keine Zweige enthÃ¤lt & \\
 Planares Netzwerk & Netzwerk ohne Kreuzung von Zweigen & \\
+\end{tabular}
+
+\subsection{Aspekte zur Wahl der Methode}
+\begin{tabular}{lll}
+	\multicolumn{3}{l}{Die \textit{Art der gegebenen Quellen} ist wohl die wichtigste Entscheidungsgrundlage:}\\
+	&Kreisstrommethode: &Spannungsquellen\\
+	&Knotenpotentialmethode: &Stromquellen\\
+	\multicolumn{3}{l}{Die \textit{Anzahl Gleichungen} kann auch entscheidend sein:}\\
+	&Kreisstrommethode: &$z-k+1-$ Anzahl idealer Stromquellen\\
+	&Knotenpotentialmethode: &$k-1-$ Anzahl idealer Spannungsquellen\\
+	\multicolumn{3}{l}{Ein kleines Argument dÃ¼rften die \textit{gesuchten GrÃ¶ssen} sein (Umformung durch $U=R \cdot I$):}\\
+	&Kreisstrommethode: &(Sehnen-) StrÃ¶me\\
+	&Knotenpotentialmethode: &(Knoten-) Spannungen
 \end{tabular}
 
 \subsection{Wahl von Kreisen}
 \begin{itemize}
-\item Beim Einzeichnen eines kreises einen Zweig davon markieren. Diesen Zweig bei den weiteren Kreisen nicht mehr verwenden.
-\item Man zeichnet einen vollständigen Baum. Jeder Kreis soll eine andere Sehne (und nur diese) enthalten $\rightarrow$ "`Basiskreis"'
-\item Man wählt als Kreise lauter Maschen (z.B. alle inneren). Voraussetzung: Netzwerk planar
+\item \textbf{Allgemein}
+Beim Einzeichnen eines Kreises einen Zweig davon markieren (abstreichen und nummerieren). Diesen Zweig bei den weiteren Kreisen nicht mehr verwenden. Anzahl Kreise: $m = z-k+1$\\[-5pt]
+\item \textbf{Kreisstrommethode}
+Man zeichnet einen vollstÃ¤ndigen Baum. Jeder Kreis soll eine andere Sehne (und nur diese) enthalten $\rightarrow$ "`Basiskreis"'\\[-5pt]
+\item \textbf{Maschenstrommethode}
+Man wÃ¤hlt als Kreise lauter Maschen (z.B. alle inneren, oder Ã¤ussere und eine innere weniger). Voraussetzung: Netzwerk planar\\[-5pt]
 \end{itemize}
-\newpage
+
 \subsection{Maschen- und Kreisstrommethode}
-Der Unterschied zwischen diesen beiden Analysemethoden ist einfach, dass die Kreisstrommethode allgemeiner ist. Bei der Maschenmethode wird jede Masche als Kreis behandelt, bei der Kreisstrommethode können Kreise auch als "`Nicht-Maschen"' angesehen werden. Besonders bei der Maschenstrommethode kann die Matrix durch Einzeichngen der Bezugspfeile in dieselbe Richtung enorm vereinfacht werden.
+Der Unterschied zwischen diesen beiden Analysemethoden ist, dass die Kreisstrommethode allgemeiner ist. Bei der Maschenmethode wird jede Masche als Kreis behandelt, bei der Kreisstrommethode kÃ¶nnen Kreise auch als "`Nicht-Maschen"' angesehen werden.
+Besonders bei der Maschenstrommethode kann die Matrix durch Einzeichngen der Bezugspfeile in dieselbe Richtung enorm vereinfacht werden$\rightarrow$Elemente ausserhalb diagonale werden negativ.
 \begin{figure}[hct]
   \begin{minipage}[t]{8 cm} %BASTEL!!
 	  \centering
 	  Maschenstrommethode:\\
-	  \includegraphics[width=8cm]{pics/dcnet/maschenmethode}
+	  \includegraphics[width=7cm]{pics/dcnet/maschenmethode}
 	 \end{minipage}
-	 \begin{minipage}[t]{11 cm}
+	 \begin{minipage}[t]{10 cm}
 	  \centering
 	  Kreisstrommethode:\\
-	  \includegraphics[width=11cm]{pics/dcnet/kreisstrommethode} 
+	  \includegraphics[width=10cm]{pics/dcnet/kreisstrommethode} 
   \end{minipage}
 \end{figure}
+
+\textbf{Quellen:} Spannungspfeil gegen Bezugsrichtung (Strom in Bezugsrichtung) des Kreises $\rightarrow$ Spannung auf rechter Seite positiv.\\
 
 Passende Matrix zur Maschenstrommethode:
 
@@ -100,13 +126,9 @@ $\left[\begin{array}{ccc}
 	\left[\begin{array}{l}j_1\\j_2\\j_3\end{array}\right] = 
 	\left[\begin{array}{c}\hervor{+}U_{q1}\\0\\
 	\hervor{+}U_{q6}
-\end{array}\right]$
+\end{array}\right]$\\
 
-Der Vorteil der Kreisstrommethode gegenüber der Maschenstrommethode ist der,dass ein gewünschter Strom direkt aus der Gleichung ausgerechnet werden kann. In diesem Beispiel wäre bspw. $I_5 = j_2$.
-
-Die Ausrechnung einer Matrix mit dem TI-89 funktioniert so (Beispiel  Maschenmethode):
-$$rref([R_1+R_2+R_3\hervor{,}-R_2\hervor{,}-R_3,U_{q1}\hervor{;}
--R_2\hervor{,} \ldots])$$
+Der Vorteil der Kreisstrommethode gegenÃ¼ber der Maschenstrommethode ist der,dass ein gewÃ¼nschter Strom direkt aus der Gleichung ausgerechnet werden kann. In diesem Beispiel wÃ¤re bspw. $I_5 = j_2\rightarrow$ Muss in Sehne liegen.
 
 \subsection{Knotenpotentialmethode}
 \begin{figure}[hct]
@@ -114,10 +136,12 @@ $$rref([R_1+R_2+R_3\hervor{,}-R_2\hervor{,}-R_3,U_{q1}\hervor{;}
     \includegraphics[width=7cm]{pics/dcnet/knotenpotentialmethode} 
   \end{minipage}
   \begin{minipage}[rt]{9.35 cm} %BASTEL!!
-  Bei dieser Methode wird immer mit \textit{Leitwerten} $G$ und (idealen) \textit{Stromquellen}
+  Bei dieser Methode wird immer mit \textit{Leitwerten} $G$  und (idealen) \textit{Stromquellen}
 gerechnet. Siehe auch S. 33 im Formelbuch.
   \end{minipage}
 \end{figure}
+
+\textbf{Quellen:} Strom in Knoten hinein $\rightarrow$ Strom auf rechter Seite positiv.\\
 
 $\left[\begin{array}{ccc}
 +G_1+G_2+G_4 &\hervor{-}G_2 &\hervor{-}G_4\\
@@ -129,40 +153,35 @@ $\left[\begin{array}{ccc}
 \left[\begin{array}{c}\hervor{+}I_{q1}\\0\\
 \hervor{-}I_{q6}\end{array}\right]$
 
+Nebenelemente(nicht auf diagonale) $\rightarrow$ Leitwerte zwischen jeweiligen Knoten $\rightarrow$ Falls anderer Knoten dazwischen $\rightarrow$ $G$ = 0
+
 \subsection{Behandlung idealer Quellen}
-1. \underline{Kreisstrom- bzw. Maschenstrommethode:}
+\subsubsection{Kreisstrom- bzw. Maschenstrommethode:}
 \begin{itemize}
-	\item Spannungsquellen (lineare oder ideale) können ohne weiteres in die Netzwerkgleichungen einbezogen werden. Die Quellenspannung erscheint "`rechts"' des Gleichheitszeichens als sogenannte Störfunktion.
-	\item \underline{Lineare Stromquellen} ($G_{i} \not = 0$) werden in \underline{Spannungsquellen} umgewandelt
-	\item Ideale Stromquellen erforden eine Sonderbehandlung --> Quellenströme gleich als Kreisströme benutzen(Quellen in Sehnen von Basiskreisen legen!)--> \underline{Pro ideale Stromquelle vermindert sich die Zahl der Netzwerkgleichungen, aber auch die Zahl der Unbekannten um eins!}
+	\item \textbf{Spannungsquellen} (lineare oder ideale) kÃ¶nnen ohne weiteres in die Netzwerkgleichungen einbezogen werden. Die Quellenspannung erscheint "`rechts"' des Gleichheitszeichens als sogenannte StÃ¶rfunktion.
+	\item \textbf{Lineare Stromquellen} ($G_{i} \not = 0$) werden in Spannungsquellen umgewandelt
+	\item \textbf{Ideale Stromquellen} erforden eine Sonderbehandlung\\ $\rightarrow$ QuellenstrÃ¶me gleich als KreisstrÃ¶me benutzen(Quellen in Sehnen von Basiskreisen legen!)\\$\rightarrow$ Falls dies nicht mÃ¶glich ist $\rightarrow$ Quellen verschieben und in Spannungsquellen umwandeln
 \end{itemize}
-2. \underline{Knotenpotentialmethode:}
+\emph{Pro ideale Stromquelle vermindert sich die Zahl der Netzwerkgleichungen und die Zahl der Unbekannten um eins!}
+
+\subsubsection{Knotenpotentialmethode:}
 \begin{itemize}
-	\item Stromquellen(lineare oder ideale) können problemlos in die Netzwerkgleichungen einbezogen werden.
-	\item \underline{Lineare Spannungsquellen}($R_{i} \not = 0$)werden in \underline{Stromquellen} umgewandelt
-	\item Ideale Spannungsquellen erfordern eine Sonderbehandlung --> eine Klemme der Spannungsquelle musss am Bezugsknoten liegen\\
-	Sind mehrere ideale Spannungsquellen vorhanden, und haben diese \underline{keinen} gemeinsamen Knoten, so kann das eben beschriebene verfahren nur bei einer Quelle angewandt werden. --> andere Quellen verschieben
+	\item \textbf{Stromquellen}(lineare oder ideale) kÃ¶nnen problemlos in die Netzwerkgleichungen einbezogen werden.
+	\item \textbf{Lineare Spannungsquellen}($R_{i} \not = 0$)werden in Stromquellen umgewandelt
+	\item \textbf{Ideale Spannungsquellen} erfordern eine Sonderbehandlung\\ $\rightarrow$ eine Klemme der Spannungsquelle muss am Bezugsknoten liegen\\
+	 $\rightarrow$ Mehrere ideale Spannungsquellen ohne gemeinsamen Knoten $\rightarrow$  Quellen verschieben und in Stromquellen umwandeln
 \end{itemize}
+\emph{Pro ideale Spannungsquelle vermindert sich die Zahl der Netzwerkgleichungen und die Zahl der Unbekannten um eins!}
 
 \subsection{Strom- Spannungsquellen-Verschiebung}
 \begin{multicols}{2}
 \begin{center}
-\includegraphics[width=0.35\textwidth]{pics/dcnet/UQuellenver}\\
+\includegraphics[width=0.4\textwidth]{pics/dcnet/UQuellenver}\\
+Knotenpotential wird verÃ¤ndert $\rightarrow \varphi_B = \varphi_{B'} + U_o$
 \end{center}
 \begin{center}
 \includegraphics[width=0.5\textwidth]{pics/dcnet/IQuellenver}\\
+Zweigstrom wird verÃ¤ndert $\rightarrow I_1 = j_1 + j_2 = I_0 + j_2$
 \end{center}
 \end{multicols}
 
-\subsection{Aspekte zur Wahl der Methode}
-\begin{tabular}{lll}
-	\multicolumn{3}{l}{Die \textit{Art der gegebenen Quellen} ist wohl die wichtigste Entscheidungsgrundlage:}\\
-	&Kreisstrommethode: &Spannungsquellen\\
-	&Knotenpotentialmethode: &Stromquellen\\
-	\multicolumn{3}{l}{Die \textit{Anzahl Gleichungen} kann auch entscheidend sein:}\\
-	&Kreisstrommethode: &$z-k+1-$ Anzahl idealer Stromquellen\\
-	&Knotenpotentialmethode: &$k-1-$ Anzahl idealer Spannungsquellen\\
-	\multicolumn{3}{l}{Ein kleines Argument dürften die \textit{gesuchten Grössen} sein (Umformung durch $U=R \cdot I$):}\\
-	&Kreisstrommethode: &(Sehnen-) Ströme\\
-	&Knotenpotentialmethode: &(Knoten-) Spannungen
-\end{tabular}
