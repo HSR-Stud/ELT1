@@ -1,33 +1,47 @@
-\newpage
 \section{Netzwerkanalyse}
 
-\begin{multicols}{2}
+\begin{minipage}{8.5cm}
 \subsection{Serieschaltung von Widerständen}
+Derselbe Strom fliesst durch alle Widerstände.\\
 $ R_{ges} = \sum\limits_{k=1}^{n}{R_k} $ \\
-
+\end{minipage}
+\begin{minipage}{8.5cm}
 \subsection{Parallelschaltung von Widerständen}
+Die parallen Bereiche weisen dieselbe Spannung auf.\\
 $ \frac{1}{R_{ges}} = \sum\limits_{k=1}^{n}\frac{1}{R_k}\ \ \ R_{ges2} = \frac{R_1 \cdot R_2}{R_1 + R_2} $ \\
+\end{minipage}
 
+\begin{minipage}{8.5cm}
 \subsection{Spannungsteiler}
-\includegraphics[width=0.15\textwidth]{pics/spannungsteiler}\\
+\includegraphics[width=0.75\textwidth]{pics/spannungsteiler}\\
 $ U_1 = U \cdot \frac{R_1}{R_1 + R_2}$ \\
 $ U_2 = U \cdot \frac{R_2}{R_1 + R_2}$ \\
+\end{minipage}
+\begin{minipage}{3cm}
+\subsection{Stromteiler}
+\includegraphics[width=0.9\textwidth]{pics/stromteiler2}\\
+\end{minipage}
+\begin{minipage}{5cm}
+%$\frac{Teilstrom}{Gesamtstrom} = \frac{Gesamtwiderstand}{von \;Teilstrom  \;durchflossener\; Widerstand} $
+$I_{2} = I \cdot \frac{1}{R_{2}} \cdot \frac{R_{1} \cdot R_{2}}{R_{1} + R_{2}} = I \cdot \frac{R_{1}}{R_{1} + R_{2}} $ \\
+$I_{1} = I \cdot \frac{R_{2}}{R_{1} + R_{2}} $ \\
+\end{minipage}
 
-\end{multicols}
+
 
 \subsection{Kirchhof}
 \begin{multicols}{4}
 \includegraphics[width=0.15 \textwidth]{pics/kirchhof/masche}\\
-Maschensatz: Summe aller Spannungen =0.\\
+Maschensatz: Summe aller Spannungen = 0.\\
 	$U_1+U_2+U_3-10V=0$
 	$10V-U_4+U_q-U_5=0$
 	$U_1+U_2+U_3-U_4+U_q-U_5=0$\\
 \includegraphics[width=0.25\textwidth]{pics/kirchhof/knoten}\\
-Konotensatz: Summer aller Str"ome = 0, zufliessende Ströme positiv abfliessende Ströme negativ.\\
+Knotensatz: Summer aller Str"ome = 0, zufliessende Ströme positiv abfliessende Ströme negativ.\\
 $4A-8A+5A-2A+I=0A$\\
 \end{multicols}
 
-\subsection{Stern Dreieck Umwandlung}
+\subsection{Stern-Dreieck-Umwandlung}
 \begin{multicols}{3}
 \includegraphics[width=0.3\textwidth]{pics/stern-dreieck}
 \subsubsection{$ \triangle \rightarrow $ Y}
@@ -42,10 +56,21 @@ $ R_2 = R_aR_bG_0 = R_aR_b(\frac{1}{R_a} + \frac{1}{R_b} + \frac{1}{R_c}) $ \\
 $ R_3 = R_bR_cG_0 = R_bR_c(\frac{1}{R_a} + \frac{1}{R_b} + \frac{1}{R_c}) $ \\
 \end{multicols}
 
+\subsection{Überlagerungssatz - Superpositionsprinzip}
+Nach dem Superpositionsprinzip kann die Wirkung einer Ursache unabhängig von allen anderen Ursachen und Wirkungen berechnet werden. $\rightarrow$ Die resultierende Wirkung ist die Summe (Überlagerung) aller Einzelwirkungen \\
+\textbf{Vorgehen:} 
+\begin{enumerate}
+	\item I oder U berechnen mit einzeln eingeschalteten Spannungs- bzw. Stromquellen (alle restlichen Quellen dabei ausschalten!)
+	\begin{itemize}
+		\item Ausgeschaltete ideale Spannungsquelle = Kurzschluss
+		\item Ausgeschaltete ideale Stromquelle = Unterbruch (Leerlauf)
+	\end{itemize}
+	\item Resultate zusammenzählen
+\end{enumerate}
 \subsection{Begriffe, Definition}
 \begin{tabular}{lll}
-Knoten & (Verbindungspunkte) & Anzahl: k \\
-Zweige & (Verbindungen zwischen Knoten) & Anzahl: z \\
+Knoten & Verbindungspunkte & Anzahl: k \\
+Zweige & Verbindungen zwischen Knoten & Anzahl: z \\
 Vollständiger Baum & Nicht geschlossener Linienzug, verbindet sämtliche Knoten& \\
 Baumzweige ("Aste) & &  Anzahl: k-1\\
 Verbindungszweige (Sehnen) & Alle Zweige, die nicht zum Baum gehören & Anzahl: z-(k-1)=z-k+1\\
@@ -56,11 +81,11 @@ Planares Netzwerk & Netzwerk ohne Kreuzung von Zweigen & \\
 
 \subsection{Wahl von Kreisen}
 \begin{itemize}
-\item Beim Einzeichnen eines kreises einen Zweig davon markieren. Diesen Zweig bei den weiteren Kreisen nicht mehr verwenden.
-\item Man zeichnet einen vollständigen Baum. Jeder Kreis soll eine andere Sehne (und nur diese) enthalten $\rightarrow$ "`Basiskreis"'
-\item Man wählt als Kreise lauter Maschen (z.B. alle inneren). Voraussetzung: Netzwerk planar
+\item \textbf{"\.Abstreichmethode\" \;:} Beim Einzeichnen eines Kreises einen Zweig davon markieren. Diesen Zweig bei den weiteren Kreisen nicht mehr verwenden.
+\item \textbf{Basiskreismethode:} Man zeichnet einen vollständigen Baum. Jeder Kreis soll eine andere Sehne (und nur diese!) enthalten.
+\item \textbf{Maschenmethode:} Man wählt als Kreise lauter Maschen (z.B. alle inneren). Voraussetzung: Netzwerk planar (d.h. Baum kann ohne Überschneidung der Verbindungen gezeichnet werden).
 \end{itemize}
-\newpage
+
 \subsection{Maschen- und Kreisstrommethode}
 Der Unterschied zwischen diesen beiden Analysemethoden ist einfach, dass die Kreisstrommethode allgemeiner ist. Bei der Maschenmethode wird jede Masche als Kreis behandelt, bei der Kreisstrommethode können Kreise auch als "`Nicht-Maschen"' angesehen werden. Besonders bei der Maschenstrommethode kann die Matrix durch Einzeichngen der Bezugspfeile in dieselbe Richtung enorm vereinfacht werden.
 \begin{figure}[ht]
@@ -102,23 +127,22 @@ $\left[\begin{array}{ccc}
 	\hervor{+}U_{q6}
 \end{array}\right]$
 
-Der Vorteil der Kreisstrommethode gegenüber der Maschenstrommethode ist der,dass ein gewünschter Strom direkt aus der Gleichung ausgerechnet werden kann. In diesem Beispiel wäre bspw. $I_5 = j_2$.
+Der Vorteil der Kreisstrommethode gegenüber der Maschenstrommethode ist der, dass ein gewünschter Strom direkt aus der Gleichung ausgerechnet werden kann. In diesem Beispiel wäre bspw. $I_5 = j_2$.
 
-Die Ausrechnung einer Matrix mit dem TI-89 funktioniert so (Beispiel  Maschenmethode):
-$$rref([R_1+R_2+R_3\hervor{,}-R_2\hervor{,}-R_3,U_{q1}\hervor{;}
+Die Ausrechnung einer Matrix mit dem TI-89 funktioniert so (Beispiel Maschenmethode): $$rref([R_1+R_2+R_3\hervor{,}-R_2\hervor{,}-R_3,U_{q1}\hervor{;}
 -R_2\hervor{,} \ldots])$$
 
 \subsection{Knotenpotentialmethode}
+
 \begin{figure}[ht]
-  \begin{minipage}[lt]{7 cm}
+  \begin{minipage}[lt]{7.5 cm}
     \includegraphics[width=7cm]{pics/dcnet/knotenpotentialmethode} 
   \end{minipage}
   \begin{minipage}[rt]{9.35 cm} %BASTEL!!
-  Bei dieser Methode wird immer mit \textit{Leitwerten} $G$ und (idealen) \textit{Stromquellen}
+  Bei dieser Methode wird immer mit \textbf{Leitwerten $G$} und (idealen) \textbf{Stromquellen}
 gerechnet. Siehe auch S. 33 im Formelbuch.
   \end{minipage}
 \end{figure}
-
 $\left[\begin{array}{ccc}
 +G_1+G_2+G_4 &\hervor{-}G_2 &\hervor{-}G_4\\
 \hervor{-}G_2 &+G_2+G_3+G_5
@@ -132,23 +156,27 @@ $\left[\begin{array}{ccc}
 \subsection{Behandlung idealer Quellen}
 1. \underline{Kreisstrom- bzw. Maschenstrommethode:}
 \begin{itemize}
-	\item Spannungsquellen (lineare oder ideale) können ohne weiteres in die Netzwerkgleichungen einbezogen werden. Die Quellenspannung erscheint "`rechts"' des Gleichheitszeichens als sogenannte Störfunktion.
+	\item Spannungsquellen (lineare oder ideale) können ohne weiteres in die Netzwerkgleichungen einbezogen werden. Die Quellenspannung erscheint "`rechts"' des Gleichheitszeichens als sogenannte Störfunktion. \\
+	Positiv: Strom aus Spannungsquelle treibt Kreisstrom an \\
+	Negativ: Strom aus Spannungsquelle fliesst entgegen dem Kreisstrom
 	\item \underline{Lineare Stromquellen} ($G_{i} \not = 0$) werden in \underline{Spannungsquellen} umgewandelt
-	\item Ideale Stromquellen erforden eine Sonderbehandlung --> Quellenströme gleich als Kreisströme benutzen(Quellen in Sehnen von Basiskreisen legen!)--> \underline{Pro ideale Stromquelle vermindert sich die Zahl der Netzwerkgleichungen, aber auch die Zahl der Unbekannten um eins!}
+	\item Ideale Stromquellen erfordern eine Sonderbehandlung --> Quellenströme gleich als Kreisströme benutzen (Quellen in Sehnen von Basiskreisen legen!) --> \textit{Pro ideale Stromquelle vermindert sich die Zahl der Netzwerkgleichungen und Unbekannte um eins!}
 \end{itemize}
 2. \underline{Knotenpotentialmethode:}
 \begin{itemize}
-	\item Stromquellen(lineare oder ideale) können problemlos in die Netzwerkgleichungen einbezogen werden.
-	\item \underline{Lineare Spannungsquellen}($R_{i} \not = 0$)werden in \underline{Stromquellen} umgewandelt
-	\item Ideale Spannungsquellen erfordern eine Sonderbehandlung --> eine Klemme der Spannungsquelle musss am Bezugsknoten liegen\\
-	Sind mehrere ideale Spannungsquellen vorhanden, und haben diese \underline{keinen} gemeinsamen Knoten, so kann das eben beschriebene verfahren nur bei einer Quelle angewandt werden. --> andere Quellen verschieben
+	\item Stromquellen (lineare oder ideale) können problemlos in die Netzwerkgleichungen einbezogen werden.
+	\item \underline{Lineare Spannungsquellen} ($R_{i} \not = 0$) werden in \underline{Stromquellen} umgewandelt
+	\item Ideale Spannungsquellen erfordern eine Sonderbehandlung --> eine Klemme der Spannungsquelle muss am Bezugsknoten liegen\\
+	Sind mehrere ideale Spannungsquellen vorhanden, und haben diese \underline{keinen} gemeinsamen Knoten, so kann das eben beschriebene Verfahren nur bei einer Quelle angewandt werden. --> andere Quellen verschieben
 \end{itemize}
-
-\subsection{Strom- Spannungsquellen-Verschiebung}
+\newpage
+\subsection{Strom-/ Spannungsquellen-Verschiebung}
 \begin{multicols}{2}
+Ideale Spannungsquelle: Entlang einem Knoten entgegen gerichtete Spannungsquellen einzeichnen.
 \begin{center}
 \includegraphics[width=0.35\textwidth]{pics/dcnet/UQuellenver}\\
 \end{center}
+Ideale Stromquelle: Entlang eines Kreises entgegen gerichtete Stromquellen einzeichnen.
 \begin{center}
 \includegraphics[width=0.5\textwidth]{pics/dcnet/IQuellenver}\\
 \end{center}

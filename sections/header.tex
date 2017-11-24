@@ -1,8 +1,12 @@
 %Schriftgr?sse, Layout, Papierformat, Gleichungen Linksb?ndig
 \documentclass[10pt,twoside,a4paper,fleqn]{article}
+
 \usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel,varioref}
+\usepackage[T1]{fontenc}            % t1 macht probleme aufm mac
+
+
 %Packages - Von LinAlg Formelsammlung kopiert! ?berpr?fen ob die alle notwendig sind
 \usepackage{amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,soul}
 \usepackage{listings}
@@ -25,8 +29,7 @@
 
 %% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% änderet Schtift!!:-p
-\usepackage[ngerman]{babel}
-\usepackage[T1]{fontenc}            % t1 macht probleme aufm mac
+
 \usepackage[scaled]{helvet}
 %\usepackage{arev}
 \renewcommand*\familydefault{\sfdefault}
