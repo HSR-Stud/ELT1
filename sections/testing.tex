@@ -1,0 +1,147 @@
+\newpage
+\begin{multicols}{2}
+\textbf{Ideale Spannungsquelle mit parallellem Widerstand}
+\columnbreak
+\textbf{Ideale Stromquelle mit seriellem Widerstand}
+\end{multicols}
+
+\begin{multicols}{4}
+\begin{circuitikz}
+	\draw
+	(2, 0) -- (0, 0) 
+	to[american voltage source] ++(0,2) -- ++(2,0)
+	to [open, o-o] ++(0,-2) -- (1, 0)
+	to [european resistor] ++(0, 2) ;
+\end{circuitikz}
+
+\columnbreak
+
+%Spannungsquelle alleine
+\begin{circuitikz}
+	\draw
+	(1.5, 0) -- (0, 0) 
+	to[american voltage source] ++(0,2) -- ++(1.5,0)
+	to [open, o-o] ++(0,-2) -- (1, 0);
+%	to [european resistor] ++(0, 2) ;
+\end{circuitikz}
+
+\columnbreak
+
+
+\begin{circuitikz}
+	\draw
+		(2, 0) -- (0, 0) 
+		 to[american current source] ++(0, 1.6)
+		 to[european resistor] ++(2, 0)
+		 to [open, o-o] ++(0,-1.6) ;
+\end{circuitikz}
+
+\columnbreak
+
+% Stromquelle alleine
+\begin{circuitikz}
+	\draw
+	(1.5, 0) -- (0, 0) 
+	to[american current source] ++(0, 2) -- ++(1.5, 0)
+	to [open, o-o] ++(0,-2) ;
+	
+\end{circuitikz}
+\end{multicols}
+
+
+\begin{multicols}{2}
+	\textbf{Ideale Stromquelle parallel zu idealer Spannungsquelle}
+	\columnbreak
+	\textbf{Ideale Stromquelle in Serie zu idealer Spannungsquelle}
+\end{multicols}
+
+
+
+\begin{multicols}{4}
+	\begin{circuitikz}
+		\draw
+		(2, 0) -- (0, 0) 
+		to[american current source] ++(0,2) -- ++(2,0)
+		to [open, o-o] ++(0,-2) -- (1, 0)
+		to [american voltage source] ++(0, 2) ;
+	\end{circuitikz}
+	
+	\columnbreak
+	
+	%Spannungsquelle alleine
+	\begin{circuitikz}
+		\draw
+		(1.5, 0) -- (0, 0) 
+		to[american voltage source] ++(0,2) -- ++(1.5,0)
+		to [open, o-o] ++(0,-2) -- (1, 0);
+		%	to [european resistor] ++(0, 2) ;
+	\end{circuitikz}
+	\columnbreak	
+	\begin{circuitikz}
+		\draw
+		(2, 0) -- (0, 0) 
+		to[american current source] ++(0, 1.6)
+		to[american voltage source] ++(2, 0)
+		to [open, o-o] ++(0,-1.6) ;
+	\end{circuitikz}
+	\columnbreak
+	
+	% Stromquelle alleine
+	\begin{circuitikz}
+		\draw
+		(1.5, 0) -- (0, 0) 
+		to[american current source] ++(0, 2) -- ++(1.5, 0)
+		to [open, o-o] ++(0,-2) ;
+		
+	\end{circuitikz}
+	
+\end{multicols}
+
+\begin{multicols}{2}
+	\textbf{Mehrere Id. Stromquellen und Widerstände parallel}
+	\columnbreak
+	\textbf{Mehrere Id. Spannungsquellen und Widerstände in Serie}
+\end{multicols}
+
+\begin{minipage}{6cm}
+\begin{circuitikz}
+	\draw
+	(2, 0) -- (0, 0) 
+	to[american current source] ++(0,2) -- ++(1,0)
+	to [european resistor] ++(0, -2) -- ++ (1, 0)
+	to [american current source] ++(0, 2) -- ++(-1, 0) -- ++(2, 0)
+	to [european resistor] ++(0, -2) -- ++ (-1, 0) -- ++ (3, 0) -- ++(-1, 0) 
+	to [american current source] ++(0,2) -- ++(-1, 0) -- ++(2, 0)
+	to [open, o-o] ++(0, -2);
+\end{circuitikz}
+\end{minipage}
+\begin{minipage}{3.5cm}
+\begin{circuitikz}
+	\draw
+	(2, 0) -- (0, 0) 
+	to[american current source] ++(0,2) -- ++(2,0)
+	to [open, o-o] ++(0,-2) -- (1, 0)
+	to [european resistor] ++(0, 2) ;
+\end{circuitikz}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{circuitikz}
+	\draw
+	(5, 0) -- (0, 0) 
+	to[american voltage source] ++(0, 1.5)
+	to[european resistor] ++(2, 0)
+	to[american voltage source] ++(1, 0)
+	to[european resistor] ++(2, 0)
+	to [open, o-o] ++(0,-1.5) ;
+\end{circuitikz}
+\end{minipage}
+\begin{minipage}{2.5cm}
+\begin{circuitikz}
+	\draw
+	(2, 0) -- (0, 0) 
+	to[american voltage source] ++(0, 1.5)
+	to[european resistor] ++(2, 0)
+	to [open, o-o] ++(0,-1.5) ;
+\end{circuitikz}
+\end{minipage}
+

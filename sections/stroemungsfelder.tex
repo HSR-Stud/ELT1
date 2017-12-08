@@ -88,13 +88,17 @@ Leistung die im Erdreich verloren geht: $ P = U \cdot I $ oder $ P = R \cdot I^2
 & \includegraphics[width=0.2\textwidth]{pics/stroemungsfeld/koaxialfeld}\\
 Hülle & $ A_{Kugel} = 4 \pi r^2 $ & $ A_{zyl} = 2 \pi r l $\\
 Kirchhoff'sches Stromgesetz & $ J(r) \cdot 4 \pi r^2 - I = 0 $ & $ I - J(r) \cdot 2 \pi r l = 0 $ \\
-Stromdichte & $ J(r) = \frac{I}{4 \pi r^2} $ & $ J(r) = \frac{I}{2 \pi r l} $ \\
-Elektrische Feldstärke & $ E(r) = \frac{1}{\sigma} \cdot J(r) = \frac{I}{4 \pi \sigma r^2} $ & $ E(r) = \frac{J(r)}{\sigma} = \frac{I}{2 \pi l r \sigma} $ \\
+Stromdichte & $ J(r) = \frac{I}{4 \pi r^2} $ & $ J(r) = \frac{I}{2 \pi r l} = \sigma E $ \\
+Elektrische Feldstärke & $ E(r) = \frac{1}{\sigma} \cdot J(r) = \frac{I}{4 \pi \sigma r^2} $ & $ E(r) = \frac{J(r)}{\sigma} = \frac{I}{2 \pi l r \sigma} = \frac{U}{l} $ \\
 Spannung & $ U = \int\limits_{R_{1}}^{R_{2}}E(r)\ dr = \frac{1}{4 \pi \sigma} \cdot \int\limits_{R_{1}}^{R_{2}}r^{-2}\ dr $ & $ U = \int\limits_{R_{1}}^{R_{2}}E(r)\ dr = \frac{I}{2 \pi l \sigma} \cdot \int\limits_{R_{1}}^{R_{2}}\frac{1}{r}\ dr $ \\
 & $ = \frac{I}{4 \pi \sigma} (\frac{1}{R_{1}} - \frac{1}{R_{2}}) $ & $ = \frac{I}{2 \pi l \sigma} \cdot \ln \frac{R_2}{R_1}$ \\
-\multicolumn{3}{l}{Potential $\varphi(r)$ "`Spannung gegenüber Bezugspunkt"'} \\
+Länge & & $ l = \frac{U}{R} $ \\
+\\
+\multicolumn{3}{l}{Potential $\varphi(r)$ "`Spannung gegenüber Bezugspunkt"'} \\ 
 für $\varphi(R_1) = 0$ : & $ \varphi (r) = - \int\limits_{R_1}^rE(x)\ dx = - \frac{I}{4 \pi \sigma} (\frac{1}{R_1} - \frac{1}{r}) $ & $ \varphi (r) = \int\limits_{r}^{R_1}\vec{E}(r) \cdot \vec{dr} = -\int\limits_{R_1}^rE(r)\ dr = - \frac{I}{2 \pi l \sigma} \ln \frac{r}{R_1}$ \\
 für $\varphi(R_2) = 0$ : & $ \varphi (r) = \int\limits_{r}^{R_{2}}E(x)\ dx = \frac{I}{4 \pi \sigma}(\frac{1}{r}-\frac{1}{R_2}) $ & $ \varphi (r) = \int\limits_{r}^{R_2}E(r)\ dr = \frac{I}{2 \pi l \sigma} \ln \frac{R_2}{r}$\\
 Widerstand & $R = \frac{U}{I} = \frac{\frac{1}{R_1} - \frac{1}{R_2}}{4 \pi \sigma} = \frac{R_2 - R_1}{4 \pi \sigma \cdot R_1 \cdot R_2} $ & $R = \frac{U}{I} = \frac{\ln\frac{R_2}{R_1}}{2 \pi l \sigma} $ \\
+
+
 
 \end{tabular}
