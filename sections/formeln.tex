@@ -5,21 +5,24 @@
 	Kraft: $\overrightarrow{F} = m \cdot a$ \\ 
 	Ladung: $Q = I \cdot t$\\
 	Spannung: $U = W \cdot Q = R \cdot I = E \cdot l_{AB} = \varphi \textsubscript{A} - \varphi \textsubscript{B}$\\
-	Strom: $I = \frac{\Delta Q}{\Delta t} = \frac{U}{R} = J \cdot A $\\
-	Stromdichte: $J=\frac {I}{A}$\\
+	$ U_{AB} = \varphi_A - \varphi_B $ = $\int\limits_{A}^B \vec E (s) \cdot  \vec{ds} \overrightarrow{}$ im homogenen Feld: $U_{AB} = E \cdot \overline{AB} \cdot \cos\alpha $ \\
+	Strom: $I = \frac{\Delta Q}{\Delta t} = \frac{U}{R} = J \cdot A = \frac{U \cdot \sigma \cdot A}{d} = \int\limits_{A} \vec J \cdot d\vec A = J \cdot A = J \cdot A \cdot cos \varphi $\\
+	Stromdichte: $J=\frac {I}{A} = \frac{U \cdot \rho}{d} = \sigma \cdot \vec E $\\
 	Arbeit: $W = F \cdot s$ \\
 	Energie"anderung: $\Delta W = \Delta Q \cdot U = e \cdot U_{AK} = \frac{1}{2} \cdot m_{e}  \cdot v^2 = \\ P \cdot \Delta t = U \cdot I \cdot \Delta t$ \\
 	Leistung = $P = \frac{\Delta W}{\Delta t}= U \cdot I = \frac{\Delta Q \cdot U}{\Delta t} = I^2 \cdot R = \frac{U^2}{R} $\hspace{10pt}\\
-	Linearer Widerstand: $R = \frac{U}{I}, \; $\\
+	Leistungsdichte $\frac{\Delta P}{\Delta V} = \frac{\Delta U }{\Delta l} \cdot \frac{\Delta I}{\Delta A} = E \cdot J = \sigma E^2 = \rho \cdot J^2 $\\
+	Linearer Widerstand: $R = \frac{U}{I} = \frac{\rho \cdot d}{A} = \frac{d}{\sigma \cdot A} \; $\\
 	Nicht linearer Widerstand: $R(I) = \frac{\Delta U}{\Delta 1}$ \\
 	Spezifischer Widerstand: $R = \frac{\rho\mathit{l}}{A}=\frac{\mathit{l}}{\sigma \cdot A}$\\
 	Leitwert: $G = \frac{1}{R}$ \\
 	Materialabhängiger spezifischer Widerstandswert: $\rho_{20} = \frac{R \cdot A}{l} $\\
 	Temperaturkoeffizient bzgl 20$^\circ$: $\alpha_{20}=\frac{\Delta R}{ R_{20} \cdot \Delta \vartheta}$ \\
 	Leitf"ahigkeit: $\sigma = \frac{1}{\rho}$ \\
-	Elektrisches Feld: $\overrightarrow{E} = \frac{\overrightarrow{F}}{Q}$\\
+	Elektrisches Feld: $\overrightarrow{E} = \frac{\overrightarrow{F}}{Q} = \frac{U}{d} = \frac{J}{\sigma} = \rho \cdot \vec J $\\
 	W"armemenge: $Q = m \cdot c_{p} \cdot \Delta\vartheta$ \\
 	Kapazit"at: $C = \frac{Q}{U}$
+
 \end{minipage}
 \begin{minipage}{5cm}
 	$\left[F\right] = \frac{1kg \cdot m}{s^2} = 1N$ \\
@@ -31,7 +34,7 @@
 	$ \left[P\right] = V \cdot A = W (Watt)$\\
 	$\left[G\right] = \frac{A}{V} = S \, (Siemens) = \frac{1}{\Omega}$\\
 	$\left[ \rho \right] = \frac{\Omega \cdot m^2}{m} = \Omega m$  häufig:  $\frac{\Omega \cdot mm^2}{m} $\\
-	$\left[ \sigma \right] = \frac{1}{\Omega m} = \frac{S}{m} = \frac{m}{\Omega \cdot mm^2} $\\
+	$\left[ \sigma \right] = \kappa = \frac{1}{\Omega m} = \frac{S}{m} = \frac{m}{\Omega \cdot mm^2} $\\
 	$\lbrack \alpha \rbrack = \frac{1}{K}$\\
 	$\lbrack C \rbrack = \frac{As}{V} = F \; (Farad)$ \\ 
 	$\lbrack E \rbrack = \frac{V}{m} = \frac{N}{C} \; $ (Volt pro Meter) \\ 
@@ -71,7 +74,7 @@ $\alpha$ = Temperaturkoeffizient, $\alpha_{20}=\frac{\Delta R}{ R_{20} \cdot \De
 Bei höheren Temperaturen (ab einigen $100^\circ$): \\
 $R_{\vartheta} = R_{20} \cdot\left( 1 + \alpha_{20} \cdot \Delta \vartheta + \beta_{20} \cdot (\Delta \vartheta)^2 + \gamma_{20} \cdot (\Delta \vartheta)^3 + ... + k_{n} \cdot (\Delta \vartheta)^n \right) => Taylor  $
 
-\subsubsection{Äquivalenz zwischen linearer Strom- und Spannungsquellen-Ersatzschaltungen}
+\textbf{Äquivalenz zwischen linearer Strom- und Spannungsquellen-Ersatzschaltungen}
 \begin{multicols}{3}
 	$ U_q = U_0 \; T \overrightarrow{} N \; I_{q} = \frac{U_{q}}{R_{i}} $\\
 	$ R_i = \frac{U_q}{I_K} = \frac{U_0}{I_K} $\\
@@ -82,5 +85,5 @@ $R_{\vartheta} = R_{20} \cdot\left( 1 + \alpha_{20} \cdot \Delta \vartheta + \be
 	\includegraphics[width=0.13\textwidth]{pics/dcnet/ersatz_spannung}\\
 	Stromquelle nach Norton\\
 	\includegraphics[width=0.13\textwidth]{pics/dcnet/ersatz_strom}\\
-
 \end{multicols}
+
