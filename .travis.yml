@@ -3,7 +3,7 @@ before_install:
 - sudo apt-get install texlive-latex-extra
 script:
 - mkdir _build
-- pdflatex -output-directory _build ./ELT1.tex
+- pdflatex -interaction=nonstopmode -output-directory _build ./ELT1.tex
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Travis CI"
