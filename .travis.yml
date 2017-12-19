@@ -2,7 +2,6 @@ before_install:
 - sudo apt-get update
 - sudo apt-get install texlive-latex-extra texlive-lang-german texlive-fonts-recommended
 script:
-- mkdir _build
 - pdflatex -interaction=nonstopmode ./ELT1.tex
 - pdflatex -interaction=nonstopmode ./ELT1.tex
 before_deploy:
