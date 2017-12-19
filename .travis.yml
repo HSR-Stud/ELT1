@@ -1,0 +1,17 @@
+before_install:
+- sudo apt-get update
+- sudo apt-get install texlive-latex-extra
+script:
+- mkdir _build
+- pdflatex -output-directory _build ./ELT1.tex
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "Travis CI"
+  - git config --local user.email "no@mail.com"
+  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
+deploy:
+  provider: releases
+  api_key: $GITHUB_RELEASE_TOKEN
+  file:
+   - ./_build/ELT1.pdf
+  skip_cleanup: true
