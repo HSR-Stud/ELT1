@@ -1,9 +1,9 @@
 before_install:
 - sudo apt-get update
-- sudo apt-get install texlive-latex-extra
+- sudo apt-get install -y texlive-latex-extra texlive-lang-german texlive-math-extra
 script:
-- mkdir _build
-- pdflatex -interaction=nonstopmode -output-directory _build ./ELT1.tex
+- pdflatex -interaction=nonstopmode ./ELT1.tex
+- pdflatex -interaction=nonstopmode ./ELT1.tex
 before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "Travis CI"
@@ -13,5 +13,5 @@ deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
   file:
-   - ./_build/ELT1.pdf
+   - ./ELT1.pdf
   skip_cleanup: true
